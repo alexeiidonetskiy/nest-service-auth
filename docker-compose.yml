@@ -1,0 +1,18 @@
+# https://dev.to/vishnucprasad/establishing-postgresql-connection-with-typeorm-in-nestjs-4le3
+
+version: '3.7'
+name: nest-services-pet-project
+services:
+  postgres-for-nest-pet-project:
+    image: postgres:14-alpine
+    ports:
+      - '54322:5432'
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
